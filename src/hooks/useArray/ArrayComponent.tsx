@@ -1,15 +1,13 @@
 import { Box, Button, Container, Text } from "@chakra-ui/react";
 import useArray from "./useArray";
-import { CustomHeading } from "../../components/CustomHeading";
+import { CollapseSection } from "../../components/CollapseSection";
 
 export const ArrayComponent = () => {
   const { array, set, push, remove, filter, update, clear } = useArray<number>([
     1, 2, 3, 4, 5, 6,
   ]);
   return (
-    <>
-      <CustomHeading title={"useArray"} />
-
+    <CollapseSection title={"useArray"}>
       <Box
         padding={4}
         backgroundColor={"whitesmoke"}
@@ -28,6 +26,6 @@ export const ArrayComponent = () => {
         <Button onClick={() => set([1, 2])}>Set To 1, 2</Button>
         <Button onClick={clear}>Clear</Button>
       </Container>
-    </>
+    </CollapseSection>
   );
 };
