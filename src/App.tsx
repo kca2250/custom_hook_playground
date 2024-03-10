@@ -1,5 +1,6 @@
 import { Container, Heading } from "@chakra-ui/react";
 import { ArrayComponent } from "./hooks/useArray/ArrayComponent";
+import AsyncComponent from "./hooks/useAsync/AsyncComponent";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       </Heading>
 
       <ArrayComponent />
+      <AsyncComponent />
     </Container>
   );
 }
