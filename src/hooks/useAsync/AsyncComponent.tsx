@@ -5,13 +5,11 @@ import { CollapseSection } from "../../components/CollapseSection";
 export default function AsyncComponent() {
   const [fire, setFire] = useState<boolean>(false);
   const [active, setActive] = useState<boolean>(true);
-  const { loading, error, value } = useAsync<string>(() =>
-    asyncDisplayString()
-  );
+  const { error, value } = useAsync<string>(() => asyncDisplayString());
 
   const clickFire = () => {
     setFire(true);
-    setActive(!active);
+    setActive(false);
   };
 
   function asyncDisplayString(): Promise<string> {
@@ -55,7 +53,7 @@ export default function AsyncComponent() {
           }
           onClick={clickFire}
         >
-          {active ? "ignite" : "ignited"}
+          {active ? "点火" : "点火済"}
         </button>
       </div>
     </CollapseSection>
